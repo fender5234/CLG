@@ -1,17 +1,10 @@
+.chatbot-upload-wrapper {
+    margin: 0 0 50px;
+}
+
 .upload-wrapper h2 {
     font-family: 'Onest-Medium', sans-serif;
     font-size: 16px;
     margin: 0 0 20px;
 }
 
-.chatbot-set-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 80px;
-    border: 2px  dashed rgba(229, 223, 226, 0.92);
-    border-radius: 14px;
-    cursor: pointer;
-}

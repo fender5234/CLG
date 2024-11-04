@@ -1,4 +1,8 @@
-.photochat {}
+.photochat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 .photochat__input {
     opacity: 0;
