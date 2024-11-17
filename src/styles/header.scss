@@ -1,5 +1,7 @@
 .header {
-    margin-bottom: 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     padding: 20px 25px;
     background-color: #ffffff;
 }

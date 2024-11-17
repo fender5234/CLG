@@ -7,7 +7,11 @@ import { useState } from 'react'
 import LoginForm from './components/LoginForm'
 import Register from './components/Register'
 import NewChatBot from './components/NewChatBot'
+import NavBar from './components/NavBar'
+import Layout from './components/Layout'
+import FormLayout from './components/FormLayout'
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -15,19 +19,17 @@ function App() {
 
 
   return (
-    <>
-      <header className='header'>
-        <a href="#"><img src="./src/assets/svg/logo.svg" alt="" /></a>
-      </header>
-      <main className='main'>
-        {/* <LoginForm /> */}
-        {/* <Register /> */}
-        <NewChatBot />
-      </main>
-      <footer className='footer'>
-        <a href="#" className='footer-link'>@2024 CloverChat</a>
-      </footer>
-    </>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<FormLayout />}>
+          <Route path="/login/register" element={<LoginForm />} />
+        </Route>
+        <Route path="/main" element={<Layout />}>
+          <Route path="/main/new-chat-bot" element={<NewChatBot />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
