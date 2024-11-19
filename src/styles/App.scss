@@ -20,6 +20,8 @@ body {
 }
 
 #root {
+    display: flex;
+    flex-direction: column;
     height: 100%;
 }
 
@@ -69,4 +71,6 @@ ul {
 .main {
     display: grid;
     grid-template-columns: 280px 1fr;
+    padding-top: 91px;
+    height: 100%;
 }
