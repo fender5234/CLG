@@ -1,5 +1,5 @@
 // // Функция для логина(входа в личный кабинет)
-// async function login(userData, setUserIsLogin) {
+// async function login(userData) {
 //     try {
 //       let register = await fetch('https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/auth/login', {
 //         method: 'POST',
@@ -13,7 +13,6 @@
 
 //       if (register.ok) {
 //         console.log('Все получилось!');
-//         setUserIsLogin(true);
 //         return true;
 //       }
 //     }
@@ -36,7 +35,7 @@ function login(userData) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(userData),
-    })
+    }).then(() => console.log('Успешно!')).catch(() => console.log('Че то пошло не так !'))
 };
 
 export default login;

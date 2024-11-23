@@ -8,6 +8,8 @@ import Register from './components/Register'
 import NewChatBot from './components/NewChatBot'
 import Chatbots from './components/Chatbots'
 import CreateChatBot from './components/CreateChatBot'
+import EditBot from './components/EditBot'
+import Predict from './components/predict'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -20,6 +22,8 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/chat-bots' element={<Chatbots />} />
           <Route path='/new-chat-bot' element={<NewChatBot />} />
+          <Route path='/edit-bot' element={<EditBot />} />
+          <Route path='/predict' element={<Predict />} />
         </Route>
       </Routes>
     </BrowserRouter>

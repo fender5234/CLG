@@ -13,8 +13,15 @@ import NewChatBot from './NewChatBot'
 import CreateChatbots from './CreateChatBot'
 
 import NavBar from './NavBar'
+import { useState } from 'react'
+import authMe from '../API/authMe';
 
 function Chatbots() {
+
+  const [isPresenceBots, setIsPresenceBots] = useState(true);
+
+
+  
   return (
     <>
       <header className='header'>
@@ -24,6 +31,9 @@ function Chatbots() {
         <NavBar />
         <div className="wrapper">
           <CreateChatbots />
+          <button onClick={() => {
+            authMe();
+          }} >Проверка авторизации!</button>
         </div>
       </main>
     </>

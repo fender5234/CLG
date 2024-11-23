@@ -15,7 +15,7 @@ function Register() {
             <div className="form-wrapper">
                 <form className='form' onSubmit={(evt) => {
                     evt.preventDefault();
-                    register();
+                    register(inputData);
                 }}>
                     <h1 className='form-title'>Регистрация в CloverChat</h1>
                     <div className='input-wrapper'>

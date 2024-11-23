@@ -4,10 +4,10 @@ import '../styles/form.scss'
 import handleInputChange from '../utils/handleInputChange';
 import login from '../API/login';
 
-function  LoginForm() {
+function LoginForm() {
 
     const [passShow, setPassShow] = useState('password');
-    const [inputData, setInputData] = useState({ name: "", password: "" });
+    const [inputData, setInputData] = useState({});
 
     return (
         <>
@@ -18,11 +18,12 @@ function  LoginForm() {
                 <form className='form' onSubmit={(evt) => {
                     evt.preventDefault();
                     login(inputData);
+                    console.log(inputData);
                 }}>
                     <h1 className='form-title'>Войти в CloverChat</h1>
                     <div className='input-wrapper'>
                         <label className='input-label' htmlFor="login">Ваш e-mail</label>
-                        <input id="login" name="login" type="text" placeholder='Ваш e-mail' value={inputData.name} onChange={(e) => handleInputChange(e, 'name', setInputData, inputData)} />
+                        <input id="login" name="login" type="text" placeholder='Ваш e-mail' value={inputData.name} onChange={(e) => handleInputChange(e, 'email', setInputData, inputData)} />
                     </div>
                     <div className='input-wrapper'>
                         <label className='input-label' htmlFor="password">Ваш Пароль</label>
