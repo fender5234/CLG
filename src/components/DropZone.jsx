@@ -6,10 +6,12 @@ function MyDropzone({ children }) {
     // Do something with the files
   }, [])
   const { getRootProps, getInputProps } = useDropzone({ onDrop })
-
+  function showFile(evt) {
+    console.log(evt.target.files);
+  };
   return (
     <div  {...getRootProps()}>
-      <input{...getInputProps()} />
+      <input{...getInputProps()} onChange={showFile} multiple/>
       {children}
     </div>
   )

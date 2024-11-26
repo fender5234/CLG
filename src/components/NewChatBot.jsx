@@ -12,8 +12,10 @@ import '../styles/app.scss'
 import MyDropzone from './DropZone'
 import NavBar from './NavBar'
 import Chatbots from './Chatbots'
+import uploadFile from '../API/uploadFile'
 
 function NewChatBot() {
+
     return (
         <>
             <header className='header'>
@@ -22,13 +24,16 @@ function NewChatBot() {
             <main className='main'>
                 <NavBar />
                 <div className="wrapper">
-                {/* <Chatbots /> */}
-                    <form className='new-chat-bot-form'>
+                    {/* <Chatbots /> */}
+                    <form className='new-chat-bot-form' enctype="multipart/form-data" onSubmit={(evt) => {
+                        evt.preventDefault();
+                        uploadFile();
+                    }}>
                         <h1>Создание нового чат бота!</h1>
                         <div className="chatbot-profile-wrapper">
                             <img className="chatbot-profile__image" src="src/assets/images/cat.jpg" alt="Образец фотографии" />
                             <div className="chatbot-profile__description">
-                                <div className="photochat">
+                                {/* <div className="photochat">
                                     <h3 className="photochat__header">Фото чатбота</h3>
                                     <MyDropzone>
                                         <label className='photochat__label' htmlFor="photochat-input">
@@ -37,7 +42,7 @@ function NewChatBot() {
                                         </label>
                                     </MyDropzone>
                                     <span className='input-description'>Поддерживается формат JPG, PNG, and SVG до 1MB</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
@@ -59,12 +64,12 @@ function NewChatBot() {
                                     <img src="src/assets/images/pick-file.png" alt="Иконка загрузки файла" />
                                     <h3>Перетащите файл или выберите с помощью проводника</h3>
                                     <p>Поддерживаются форматы PDF,DOC,DOCX,TXT</p>
-                                    <button className='chatbot-set-wrapper__button'>Выберите файл</button>
+                                    <span className='chatbot-set-wrapper__button'>Выберите файл</span>
                                     <span>Если вы загружаете PDF-файл, убедитесь, что вы можете выделить в нем текст.</span>
                                 </label>
                             </MyDropzone>
                         </div>
-
+                        <button type='button'>Загрузить файлы</button>
                         <div className="succes-uploaded">
                             <h2>Успешно загруженные файлы</h2>
                             <div className='succes-uploaded__area'><p>Нет загруженных файлов </p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></div>
