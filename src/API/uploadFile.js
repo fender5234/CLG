@@ -1,24 +1,21 @@
 // Функция для логина(входа в личный кабинет)
-async function uploadFile(uploadData,fileName) {
-    try {
-      let register = await fetch(`https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/files/upload_txt?name=${fileName}`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-      },
-        body: uploadData,
-      });
+async function uploadFile(uploadData, fileName) {
+  try {
+    let upload = await fetch(`https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/files/upload_txt?name=${fileName}`, {
+      credentials: 'include',
+      method: 'POST',
+      body: uploadData
+    });
 
-      if (register.ok) {
-        console.log('Все получилось!');
-        return true;
-      }
-    }
-
-    catch {
-      console.log('Какие то проблемы)))');
+    if (upload.ok) {
+      console.log('Все получилось!');
+      return await upload.json();
     }
   }
 
-  export default uploadFile;
+  catch {
+    console.log('Какие то проблемы)))','функция аплоад');
+  }
+}
+
+export default uploadFile;

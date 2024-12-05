@@ -8,6 +8,9 @@ async function authMe() {
 
     if (register.ok) {
       console.log('Залогинен!');
+      return await register.json();
+    } else {
+      return null;
     }
   }
 

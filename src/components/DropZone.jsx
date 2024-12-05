@@ -21,7 +21,7 @@ function MyDropzone({setFileUpload}) {
         <span>Если вы загружаете PDF-файл, убедитесь, что вы можете выделить в нем текст.</span>
       </label>
 
-      <input{...getInputProps()} onChange={showFile}  multiple name="userFile" />
+      <input{...getInputProps()} onChange={showFile} name="userFile" />
     </div>
   )
 }
