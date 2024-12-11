@@ -21,21 +21,20 @@ import createAgent from '../API/createAgent'
 import handleInputChange from '../utils/handleInputChange'
 
 function NewChatBot() {
+
+    // Создаю новые экземпляр объекта formData который в который будем класть файл с текстом для отправки на сервер.
+    const uploadData = new FormData();
+    // 
+
+    // Создаем объект с нужными полями в которых будут данные об агенте
+
+
+    // Состояния (переменные) с нужными данными для отправки формы.
     const [inputData, setInputData] = useState({});
     const [userId, setUserId] = useState(null);
     const [fileUpload, setFileUpload] = useState(null);
     const [filePath, setFilePath] = useState(null);
-
-    console.log(fileUpload, 'Че в стейте аплоада!?');
-
-    const uploadData = new FormData();
-
-    useEffect(() => {
-        if (fileUpload) {
-            uploadData.append(`file`, fileUpload[0]);
-            getPath();
-        }
-    }, [fileUpload])
+    // 
 
     const newAgent = {
         'name': inputData.name,
@@ -43,23 +42,36 @@ function NewChatBot() {
         'knowledge_file': filePath,
         'promt': inputData.text
     };
+    // 
 
-    // Сделать редирект на случай не авторизованного пользователя TODO!
-    async function getUserId() {
-        let userId = await authMe();
-        setUserId(userId.id);
+    // Добавляем выбранный файл с настройками в FormData и отправляем его на сервер
+    if (fileUpload) {
+        uploadData.append(`file`, fileUpload[0]);
     }
-    // Сделать редирект на случай не авторизованного пользователя TODO!
+    // 
 
 
+    // Функция для отправки текстового файла с промтом и получения пути к этому файлу обратно
     async function getPath() {
         let answer = await uploadFile(uploadData, fileUpload[0].name);
         setFilePath(answer);
+    }
+    // 
+
+
+    // Сделать редирект на случай не авторизованного пользователя TODO!
+    // Функция получения ID пользователя
+    async function getUserId() {
+        let userId = await authMe();
+        setUserId(userId.id);
     }
 
     useEffect(() => {
         getUserId();
     }, [])
+    // 
+    // Сделать редирект на случай не авторизованного пользователя TODO!
+
 
     return (
         <>
@@ -71,6 +83,7 @@ function NewChatBot() {
                 <div className="wrapper wrapper-form">
                     <form className='new-chat-bot-form' encType="multipart/form-data" onSubmit={(evt) => {
                         evt.preventDefault();
+                       
                         createAgent(newAgent);
                     }}>
                         <h1>Создание нового чат бота!</h1>
@@ -102,10 +115,9 @@ function NewChatBot() {
                                 <h2>Загрузите файлы с настройками</h2>
                                 <MyDropzone setFileUpload={setFileUpload} />
                             </div>
-                            <button type='submit'>Загрузить файлы</button>
                             <div className="succes-uploaded">
-                                <h2>Успешно загруженные файлы</h2>
-                                <div className='succes-uploaded__area'><p>Нет загруженных файлов </p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></div>
+                                <h2>Готовые к загрузке файлы</h2>
+                                <div className='succes-uploaded__area'><p>Файлы отсутствуют</p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></div>
                             </div>
                         </div>
                         <button type='submit'>Сохранить и продолжить</button>
