@@ -21,15 +21,22 @@ import createAgent from '../API/createAgent'
 import handleInputChange from '../utils/handleInputChange'
 
 function NewChatBot() {
-
-
-
     const [inputData, setInputData] = useState({});
     const [userId, setUserId] = useState(null);
     const [fileUpload, setFileUpload] = useState(null);
     const [filePath, setFilePath] = useState(null);
 
+    console.log(fileUpload, 'Че в стейте аплоада!?');
+
     const uploadData = new FormData();
+
+    useEffect(() => {
+        if (fileUpload) {
+            uploadData.append(`file`, fileUpload[0]);
+            getPath();
+        }
+    }, [fileUpload])
+
     const newAgent = {
         'name': inputData.name,
         'user_id': userId,
@@ -37,19 +44,11 @@ function NewChatBot() {
         'promt': inputData.text
     };
 
-    console.log(newAgent);
-
-    if (fileUpload) {
-        uploadData.append(`file`, fileUpload[0]);
-    }
-
     // Сделать редирект на случай не авторизованного пользователя TODO!
-
     async function getUserId() {
         let userId = await authMe();
         setUserId(userId.id);
     }
-    console.log(typeof userId, 'пометка');
     // Сделать редирект на случай не авторизованного пользователя TODO!
 
 
@@ -72,20 +71,6 @@ function NewChatBot() {
                 <div className="wrapper wrapper-form">
                     <form className='new-chat-bot-form' encType="multipart/form-data" onSubmit={(evt) => {
                         evt.preventDefault();
-                        getPath();
-                    }}>
-                        <div className="chatbot-upload-wrapper">
-                            <h2>Загрузите файлы с настройками</h2>
-                            <MyDropzone setFileUpload={setFileUpload} />
-                        </div>
-                        <button type='submit'>Загрузить файлы</button>
-                        <div className="succes-uploaded">
-                            <h2>Успешно загруженные файлы</h2>
-                            <div className='succes-uploaded__area'><p>Нет загруженных файлов </p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></div>
-                        </div>
-                    </form>
-                    <form className='new-chat-bot-form' encType="multipart/form-data" onSubmit={(evt) => {
-                        evt.preventDefault();
                         createAgent(newAgent);
                     }}>
                         <h1>Создание нового чат бота!</h1>
@@ -98,7 +83,6 @@ function NewChatBot() {
                                 </div>
                             </div>
                         </div>
-
                         <div className="chatbot-name__wrapper">
                             <label className="chatbot-name__label">
                                 <span className="chatbot-name__label-span">Название агента:</span>
@@ -113,8 +97,20 @@ function NewChatBot() {
                             <h2>Введите инструкции для бота</h2>
                             <textarea className='chatbot-inctruction' name="chatbot-inctruction" id="chatbot-inctruction" placeholder='Введите инструкции для бота' value={inputData.text} onChange={(e) => handleInputChange(e, 'text', setInputData, inputData)}></textarea>
                         </div>
+                        <div >
+                            <div className="chatbot-upload-wrapper">
+                                <h2>Загрузите файлы с настройками</h2>
+                                <MyDropzone setFileUpload={setFileUpload} />
+                            </div>
+                            <button type='submit'>Загрузить файлы</button>
+                            <div className="succes-uploaded">
+                                <h2>Успешно загруженные файлы</h2>
+                                <div className='succes-uploaded__area'><p>Нет загруженных файлов </p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></div>
+                            </div>
+                        </div>
                         <button type='submit'>Сохранить и продолжить</button>
                     </form>
+
                 </div>
             </main>
         </>
