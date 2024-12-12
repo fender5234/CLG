@@ -1,14 +1,13 @@
 import React, { useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 
-function MyDropzone({ setFileUpload}) {
+function MyDropzone({ setFileUpload,fileUpload}) {
   const onDrop = useCallback(acceptedFiles => {
   }, [])
   const { getRootProps, getInputProps } = useDropzone({ onDrop })
 
   function selectedFiles(evt) {
     setFileUpload(evt.target.files);
-    console.log('Че то выбранно!');
   };
   return (
     <div  {...getRootProps()}>
@@ -24,7 +23,7 @@ function MyDropzone({ setFileUpload}) {
       <input{...getInputProps()} onChange={(evt) => {
         evt.preventDefault();
         selectedFiles(evt)
-      }} name="userFile" />
+      }} name="userFile" multiple />
     </div>
   )
 }

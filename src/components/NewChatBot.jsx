@@ -43,16 +43,19 @@ function NewChatBot() {
         'promt': inputData.text
     };
     // 
-
     // Добавляем выбранный файл с настройками в FormData и отправляем его на сервер
     if (fileUpload) {
-        uploadData.append(`file`, fileUpload[0]);
+        uploadData.append('file', fileUpload[0]);
     }
-    // 
-
+    console.log(uploadData);
+    //
+    for (let value of uploadData.values()) {
+        console.log(value, 'Проходимся по значениям')
+    }
 
     // Функция для отправки текстового файла с промтом и получения пути к этому файлу обратно
     async function getPath() {
+        console.log('запрос пошел!');
         let answer = await uploadFile(uploadData, fileUpload[0].name);
         setFilePath(answer);
     }
@@ -72,6 +75,10 @@ function NewChatBot() {
     // 
     // Сделать редирект на случай не авторизованного пользователя TODO!
 
+    async function uploadDataAgent() {
+        await getPath();
+        createAgent(newAgent);
+    }
 
     return (
         <>
@@ -83,8 +90,7 @@ function NewChatBot() {
                 <div className="wrapper wrapper-form">
                     <form className='new-chat-bot-form' encType="multipart/form-data" onSubmit={(evt) => {
                         evt.preventDefault();
-                       
-                        createAgent(newAgent);
+                        uploadDataAgent();
                     }}>
                         <h1>Создание нового чат бота!</h1>
                         <div className="chatbot-profile-wrapper">
@@ -113,11 +119,16 @@ function NewChatBot() {
                         <div >
                             <div className="chatbot-upload-wrapper">
                                 <h2>Загрузите файлы с настройками</h2>
-                                <MyDropzone setFileUpload={setFileUpload} />
+                                <MyDropzone setFileUpload={setFileUpload} fileUpload={fileUpload} />
                             </div>
                             <div className="succes-uploaded">
                                 <h2>Готовые к загрузке файлы</h2>
-                                <div className='succes-uploaded__area'><p>Файлы отсутствуют</p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></div>
+                                <div className='succes-uploaded__area'>
+                                    {fileUpload ? 
+                                      <p>Файлы есть!</p>
+                                    : <><p>Файлы отсутствуют</p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></>}
+
+                                </div>
                             </div>
                         </div>
                         <button type='submit'>Сохранить и продолжить</button>
