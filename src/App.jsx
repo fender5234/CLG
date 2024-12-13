@@ -11,22 +11,30 @@ import CreateChatBot from './components/CreateChatBot'
 import EditBot from './components/EditBot'
 import Predict from './components/predict'
 
+import RequireAuth from './hoc/RequireAuth'
+import { AuthProvider } from './hoc/AuthProvider'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/">
-          <Route path='/login' element={<LoginForm />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/chat-bots' element={<Chatbots />} />
-          <Route path='/new-chat-bot' element={<NewChatBot />} />
-          <Route path='/edit-bot' element={<EditBot />} />
-          <Route path='/predict' element={<Predict />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route path='/login' element={<LoginForm />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/chat-bots' element={<Chatbots />} />
+            <Route path='/new-chat-bot' element={
+              <RequireAuth>
+                <NewChatBot />
+              </RequireAuth>} />
+            <Route path='/edit-bot' element={<EditBot />} />
+            <Route path='/predict' element={<Predict />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 

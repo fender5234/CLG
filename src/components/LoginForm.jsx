@@ -1,10 +1,17 @@
 import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import '../styles/input.scss'
 import '../styles/form.scss'
+
 import handleInputChange from '../utils/handleInputChange';
 import login from '../API/login';
 
 function LoginForm() {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const fromPage = location.state?.from?.pathname || '/';
 
     const [passShow, setPassShow] = useState('password');
     const [inputData, setInputData] = useState({});
