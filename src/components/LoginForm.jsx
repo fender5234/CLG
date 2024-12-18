@@ -22,7 +22,6 @@ function LoginForm() {
   async function handleLogin(inputData) {
     const isLogin = await login(inputData);
     userContext.setAuth(isLogin);
-    console.log(userContext);
   }
 
   return (

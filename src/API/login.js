@@ -24,7 +24,6 @@ async function login(userData) {
   }
 }
 
-export default login;
 
 // function login(userData) {
 //   fetch(
@@ -45,4 +44,4 @@ export default login;
 //     .catch(() => console.log("Че то пошло не так !"));
 // }
 
-// export default login;
+export default login;

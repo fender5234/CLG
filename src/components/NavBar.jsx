@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../styles/nav-bar.scss';
+import logout from '../API/logout';
 
 function NavBar() {
   return (
@@ -79,7 +80,9 @@ function NavBar() {
           </li>
         </ul>
         <div className="">
-          <button className="nav-bar__button">
+          <button className="nav-bar__button" onClick={() => {
+            logout();
+          }}>
             <svg width="19.708313" height="19.708252" viewBox="0 0 19.7083 19.7083" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
               <desc>
                 Created with Pixso.
