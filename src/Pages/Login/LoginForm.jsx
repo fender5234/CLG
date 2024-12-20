@@ -2,12 +2,16 @@ import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import "../../styles/input.scss";
+import "../../styles/form.scss"
 import "./login-form.scss"
+
 import handleInputChange from "../../utils/handleInputChange";
 import login from "../../API/login";
 
 import UserContext from "../../context/userContext";
+
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -26,7 +30,7 @@ function LoginForm() {
   return (
     <>
       <Header />
-      <div className="form-wrapper">
+      <div className="login-form-wrapper form-wrapper ">
         <form
           className="form"
           onSubmit={(evt) => {
@@ -104,11 +108,7 @@ function LoginForm() {
           </div>
         </form>
       </div>
-      <footer className="footer">
-        <a href="#" className="footer-link">
-          @2024 CloverChat
-        </a>
-      </footer>
+      <Footer />
     </>
   );
 }

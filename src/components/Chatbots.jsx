@@ -19,8 +19,6 @@ import authMe from '../API/authMe';
 function Chatbots() {
 
   const [isPresenceBots, setIsPresenceBots] = useState(true);
-
-
   
   return (
     <>
@@ -30,7 +28,6 @@ function Chatbots() {
       <main className='main'>
         <NavBar />
         <div className="wrapper">
-          <CreateChatbots />
           <button onClick={() => {
             authMe();
           }} >Проверка авторизации!</button>

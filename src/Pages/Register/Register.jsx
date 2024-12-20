@@ -1,7 +1,12 @@
-import React from 'react'
 import { useState } from 'react';
 import handleInputChange from '../../utils/handleInputChange';
+
+import './register-login.scss';
+import '../../styles/form.scss';
+
 import register from '../../API/register';
+
+import Header from '../../components/Header/Header';
 
 function Register() {
     const [passShow, setPassShow] = useState('password');
@@ -9,9 +14,7 @@ function Register() {
 
     return (
         <>
-            <header className='header header--form'>
-                <a className='logo-link' href="#"><img src="./src/assets/svg/logo.svg" alt="" /></a>
-            </header>
+            <Header />
             <div className="form-wrapper">
                 <form className='form' onSubmit={(evt) => {
                     evt.preventDefault();
