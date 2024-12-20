@@ -1,26 +1,27 @@
-import '../styles/new-chat-bot.scss'
-import '../styles/input-photochat.scss'
-import '../styles/input-description.scss'
-import '../styles/new-chat-bot-form.scss'
-import '../styles/upload-wrapper.scss'
-import '../styles/chatbot-instructions.scss'
-import '../styles/chatbot-set-wrapper.scss'
-import '../styles/succes-uploaded.scss'
-import '../styles/wrapper.scss'
-import '../styles/app.scss'
+import '../../styles/input-photochat.scss'
+import '../../styles/input-description.scss'
+import '../..//styles/new-chat-bot.scss'
+import '../../styles/upload-wrapper.scss'
+import '../../styles/chatbot-instructions.scss'
+import '../../styles/chatbot-set-wrapper.scss'
+import '../../styles/succes-uploaded.scss'
+import '../../styles/wrapper.scss'
+import '../../styles/app.scss'
+
+import Header from '../../components/Header/Header'
 
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-import MyDropzone from './DropZone'
-import NavBar from './NavBar/NavBar'
-import uploadFile from '../API/uploadFile'
-import authMe from '../API/authMe'
-import createAgent from '../API/createAgent'
+import MyDropzone from '../../components/DropZone'
+import NavBar from '../../components/NavBar/NavBar'
+import uploadFile from '../../API/uploadFile'
+import authMe from '../../API/authMe'
+import createAgent from '../../API/createAgent'
 
-import handleInputChange from '../utils/handleInputChange'
+import handleInputChange from '../../utils/handleInputChange'
 
-function NewChatBot() {
+function CreateChatBot() {
 
     // Создаю новые экземпляр объекта formData который в который будем класть файл с текстом для отправки на сервер.
     const uploadData = new FormData();
@@ -82,9 +83,7 @@ function NewChatBot() {
 
     return (
         <>
-            <header className='header'>
-                <a className='logo-link' href="#"><img src="./src/assets/svg/logo.svg" alt="" /></a>
-            </header>
+            <Header />
             <main className='main'>
                 <NavBar />
                 <div className="wrapper wrapper-form">
@@ -124,9 +123,9 @@ function NewChatBot() {
                             <div className="succes-uploaded">
                                 <h2>Готовые к загрузке файлы</h2>
                                 <div className='succes-uploaded__area'>
-                                    {fileUpload ? 
-                                      <p>Файлы есть!</p>
-                                    : <><p>Файлы отсутствуют</p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></>}
+                                    {fileUpload ?
+                                        <p>Файлы есть!</p>
+                                        : <><p>Файлы отсутствуют</p> <img src="src/assets/images/not-files.svg" alt="Иконка пустой файл" /></>}
 
                                 </div>
                             </div>
@@ -140,4 +139,4 @@ function NewChatBot() {
     )
 }
 
-export default NewChatBot
+export default CreateChatBot

@@ -1,16 +1,15 @@
-// import './styles/App.scss'
+import './styles/App.scss'
 import "./styles/fonts.scss";
-import "./styles/header.scss";
-import "./styles/footer.scss";
 
-import LoginForm from "./components/LoginForm";
-import Register from "./components/Register";
+
+import LoginForm from './Pages/Login/LoginForm';
+import Register from "./Pages/Register/Register";
 import NewChatBot from "./components/NewChatBot";
-import Chatbots from "./components/Chatbots";
 import EditBot from "./components/EditBot";
 import Predict from "./components/predict";
-import Preloader from "./components/Preloader";
-import RequireAuth from "./components/RequireAuth";
+import Preloader from "./components/Preloader/Preloader";
+import RequireAuth from "./hoc/RequireAuth";
+import CreateChatBot from "./Pages/CreateChatBot/CreateChatBot";
 
 import UserProvider from "./hoc/UserProvider";
 
@@ -24,7 +23,6 @@ function App() {
           <Route path="/">
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/chat-bots" element={<Chatbots />} />
             <Route
               path="/new-chat-bot"
               element={
@@ -36,6 +34,7 @@ function App() {
             <Route path="/edit-bot" element={<EditBot />} />
             <Route path="/predict" element={<Predict />} />
             <Route path="/preloader" element={<Preloader />} />
+            <Route path="/create-bot" element={<CreateChatBot/>} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import handleInputChange from "../utils/handleInputChange";
 import predict from "../API/predict";
-import NavBar from "./NavBar";
+import NavBar from "./NavBar/NavBar";
 
 function Predict() {
   const [inputData, setInputData] = useState({});

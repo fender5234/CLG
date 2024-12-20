@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import Preloader from "./Preloader";
+import { useNavigate } from "react-router-dom";
+
+import Preloader from "../components/Preloader/Preloader";
 import authMe from "../API/authMe";
-import { Navigate, useNavigate } from "react-router-dom";
+
 
 function RequireAuth({ children }) {
   const [auth, setAuth] = useState(false);

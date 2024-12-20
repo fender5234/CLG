@@ -1,19 +1,18 @@
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import "../styles/input.scss";
-import "../styles/form.scss";
+import "../../styles/input.scss";
+import "./login-form.scss"
+import handleInputChange from "../../utils/handleInputChange";
+import login from "../../API/login";
 
-import handleInputChange from "../utils/handleInputChange";
-import login from "../API/login";
-
-import UserContext from "../context/userContext";
+import UserContext from "../../context/userContext";
+import Header from "../../components/Header/Header";
 
 function LoginForm() {
   const navigate = useNavigate();
   const location = useLocation();
   const userContext = useContext(UserContext);
-  console.log(userContext);
   const fromPage = location.state?.from?.pathname || "/";
 
   const [passShow, setPassShow] = useState("password");
@@ -26,11 +25,7 @@ function LoginForm() {
 
   return (
     <>
-      <header className="header header--form">
-        <a className="logo-link" href="#">
-          <img src="./src/assets/svg/logo.svg" alt="" />
-        </a>
-      </header>
+      <Header />
       <div className="form-wrapper">
         <form
           className="form"

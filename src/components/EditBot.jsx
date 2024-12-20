@@ -1,4 +1,4 @@
-import NavBar from "./NavBar"
+import NavBar from "./NavBar/NavBar"
 import handleInputChange from "../utils/handleInputChange"
 import { useState } from "react";
 import promtUpdate from "../API/promtUpdate";

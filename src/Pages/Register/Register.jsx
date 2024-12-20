@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
-import handleInputChange from '../utils/handleInputChange';
-import register from '../API/register';
+import handleInputChange from '../../utils/handleInputChange';
+import register from '../../API/register';
 
 function Register() {
     const [passShow, setPassShow] = useState('password');

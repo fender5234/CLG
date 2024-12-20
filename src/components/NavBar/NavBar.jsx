@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import '../styles/nav-bar.scss';
-import logout from '../API/logout';
+
+import './nav-bar.scss';
+import logout from '../../API/logout';
 
 function NavBar() {
   return (
