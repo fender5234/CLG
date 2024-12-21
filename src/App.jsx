@@ -27,10 +27,16 @@ function App() {
             <Route path="/predict" element={<Predict />} />
             <Route path="/preloader" element={<Preloader />} />
             <Route path="/dashboard" element={<DashBoardLayout />} />
-            <Route path="/create-bot" element={
+            {/* <Route path="/create-bot" element={
               <RequireAuth>
                 <CreateChatBot />
               </RequireAuth>
+            } />
+          </Route> */}
+          <Route path="/create-bot" element={
+            
+                <CreateChatBot />
+         
             } />
           </Route>
         </Routes>

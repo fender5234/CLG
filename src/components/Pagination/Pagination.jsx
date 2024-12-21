@@ -40,6 +40,8 @@ function Pagination() {
           />
         </svg>
       </Link>
+      <Link className="pagination__link">Чат боты</Link>
+      <Link className="pagination__link pagination__link--active">Новый бот</Link> 
     </div>
   );
 }

@@ -1,0 +1,26 @@
+.not-working-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/images/not-working.jpg");
+  background-size: cover;
+}
+
+.not-working-wrapper h1 {
+  font-size: 48px;
+  font-family: "Onest-Bold";
+  color: #ffffff;
+}
+
+.not-working-wrapper a {
+  font-size: 32px;
+  font-family: "Onest-Bold";
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.not-working-wrapper a {
+  display: block;
+}

@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import "../../styles/input.scss";
-import "../../styles/form.scss"
-import "./login-form.scss"
+import "../../styles/form.scss";
+import "./login-form.scss";
 
 import handleInputChange from "../../utils/handleInputChange";
 import login from "../../API/login";
@@ -12,6 +12,7 @@ import UserContext from "../../context/userContext";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import TemporarilyNotWorking from "../../components/TemporarilyNotWorking/TemporarilyNotWorking";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -21,16 +22,19 @@ function LoginForm() {
 
   const [passShow, setPassShow] = useState("password");
   const [inputData, setInputData] = useState({});
+  const [serviceOk, setServiceOk] = useState(true);
 
   async function handleLogin(inputData) {
     const isLogin = await login(inputData);
     userContext.setAuth(isLogin);
-    if(isLogin) {
-      navigate('/create-bot');
+    if (isLogin) {
+      navigate("/create-bot");
+    } else {
+      setServiceOk(false);
     }
   }
 
-  return (
+  return serviceOk ? (
     <>
       <Header />
       <div className="login-form-wrapper form-wrapper ">
@@ -113,6 +117,8 @@ function LoginForm() {
       </div>
       <Footer />
     </>
+  ) : (
+    <TemporarilyNotWorking />
   );
 }
 
