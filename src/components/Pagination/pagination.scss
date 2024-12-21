@@ -1,0 +1,17 @@
+.pagination__go-back {
+  display: block;
+  width: 38px;
+  height: 38px;
+  transition: all 0.4s ease;
+  color: #c5c6ca;
+
+  &:hover,
+  &:active {
+    color: rgb(33, 148, 54);
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+}

@@ -25,6 +25,9 @@ function LoginForm() {
   async function handleLogin(inputData) {
     const isLogin = await login(inputData);
     userContext.setAuth(isLogin);
+    if(isLogin) {
+      navigate('/create-bot');
+    }
   }
 
   return (

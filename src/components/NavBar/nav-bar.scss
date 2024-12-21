@@ -12,16 +12,14 @@
 .nav-bar__wrapper {
   position: fixed;
   top: 0;
-  padding-top: 93px;
+  padding-top: 20px;
   height: 100vh;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
 }
 
 .nav-bar__list {
   padding: 32px 0;
-  border-top: 1px solid rgb(233, 235, 244);
 }
 
 .nav-bar__list a {
@@ -29,10 +27,10 @@
   align-items: center;
   gap: 15px;
   padding: 16px 20px;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 16px;
   line-height: 20px;
-  color: #191F31;
+  color: #191f31;
   border-radius: 8px;
   transition: all 0.4s ease;
 
@@ -55,4 +53,13 @@
     background-color: rgba(33, 148, 54, 0.07);
     color: rgb(33, 148, 54);
   }
+}
+
+.nav-bar__logo {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgb(233, 235, 244);
+}
+
+.nav-bar__footer {
+  margin-top: auto;
 }
