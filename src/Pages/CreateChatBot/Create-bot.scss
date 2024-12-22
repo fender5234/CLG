@@ -1,0 +1,80 @@
+.create-bot-title {
+  margin: 0 0 40px;
+}
+
+.create-bot-subtitle {
+  margin: 0 0 35px;
+}
+
+.create-bot-upload-wrapper {
+  margin: 0 0 56px;
+}
+
+.create-bot-profile {
+  display: flex;
+}
+
+.create-bot-profile > img {
+  display: block;
+  border-radius: 50%;
+  width: 113px;
+  height: 113px;
+  object-fit: cover;
+}
+
+.create-bot-profile-description {
+  margin-left: 30px;
+}
+
+.create-bot-profile-description h3 {
+  margin: 0 0 20px;
+}
+
+.create-bot-description {
+  display: block;
+  font-size: 14px;
+  color: rgb(108, 114, 128);
+  margin-top: 20px;
+}
+
+.create-bot-profile-label-image {
+  display: inline-flex;
+  border-radius: 8px;
+  background-color: #fcfcfe;
+  border: 1px solid #dfe2eb;
+  padding: 10px 20px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    border-color: rgb(33, 148, 54);
+  }
+
+  &:hover,
+  &:active .create-bot-profile-label-image__file-button p {
+    color: rgb(33, 148, 54);
+  }
+}
+
+.create-bot-profile-label-image > input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.create-bot-profile-label-image__file-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-bot-profile-label-image__file-button p {
+  font-family: "Onest-Medium";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
