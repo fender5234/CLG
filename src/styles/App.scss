@@ -28,6 +28,9 @@ body {
 
 
 button {
+    display: block;
+    margin: 0 auto;
+    max-width: 260px;
     width: 100%;
     padding: 18px 20px;
     font-family: 'Onest-Medium', sans-serif;
@@ -59,7 +62,6 @@ a {
 }
 
 .nda-wrapper {
-    margin-top: 24px;
     padding: 0 30px;
 }
 

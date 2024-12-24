@@ -40,6 +40,11 @@
   }
 }
 
+.nav-bar__list a>svg {
+  width: 20px;
+  height: 20px;
+}
+
 .nav-bar__button {
   display: flex;
   justify-content: center;

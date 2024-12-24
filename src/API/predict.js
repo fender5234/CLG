@@ -1,6 +1,7 @@
-
 function predict(userData) {
-  fetch('https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/predict/get_predict', {
+  const API_URL = "https://lexashvetsoff-onlineconsultantai-api-46d7.twc1.net/predict/get_predict";
+
+  fetch(API_URL, {
     method: 'POST',
     credentials: 'include',
     headers: {

@@ -12,11 +12,11 @@ function MyDropzone({ setFileUpload,fileUpload}) {
   return (
     <div  {...getRootProps()}>
 
-      <label className="chatbot-set-wrapper">
+      <label className="create-bot-wrapper">
         <img src="src/assets/images/pick-file.png" alt="Иконка загрузки файла" />
         <h3>Перетащите файл или выберите с помощью проводника</h3>
         <p>Поддерживаются форматы PDF,DOC,DOCX,TXT</p>
-        <button type='button' className='chatbot-set-wrapper__button'>Выберите файл</button>
+        <button type='button' className='create-bot-wrapper__button'>Выберите файл</button>
         <span>Если вы загружаете PDF-файл, убедитесь, что вы можете выделить в нем текст.</span>
       </label>
 

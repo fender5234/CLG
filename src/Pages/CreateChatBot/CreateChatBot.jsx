@@ -1,18 +1,15 @@
-import "../..//styles/new-chat-bot.scss";
-import "../../styles/upload-wrapper.scss";
-import "../../styles/chatbot-instructions.scss";
-import "../../styles/chatbot-set-wrapper.scss";
-import "../../styles/succes-uploaded.scss";
 import "../../styles/wrapper.scss";
 import "./create-bot.scss";
 
-import DashBoardLayout from "../../components/DashBoardLayout/DashBoardLayout";
-import Pagination from "../../components/Pagination/Pagination";
 import { useState } from "react";
 import { useEffect } from "react";
 
+import DashBoardLayout from "../../components/DashBoardLayout/DashBoardLayout";
+import Pagination from "../../components/Pagination/Pagination";
 import MyDropzone from "../../components/DropZone";
 import NavBar from "../../components/NavBar/NavBar";
+
+
 import uploadFile from "../../API/uploadFile";
 import authMe from "../../API/authMe";
 import createAgent from "../../API/createAgent";
@@ -169,9 +166,9 @@ function CreateChatBot() {
               </div>
             </div>
             <div className="create-bot-upload-wrapper">
-              <div className="chatbot-name__wrapper">
-                <label className="chatbot-name__label">
-                  <span className="chatbot-name__label-span">
+              <div className="create-bot-name-wrapper">
+                <label className="create-bot-name-label">
+                  <span className="create-bot-name-label-span">
                     Название агента:
                   </span>
                   <input
@@ -183,8 +180,8 @@ function CreateChatBot() {
                     }
                   />
                 </label>
-                <label className="chatbot-name__label">
-                  <span className="chatbot-name__label-span">
+                <label className="create-bot-name-label">
+                  <span className="create-bot-name-label-span">
                     Название компании:
                   </span>
                   <input
@@ -199,9 +196,9 @@ function CreateChatBot() {
                 Введите инструкции для бота
               </h2>
               <textarea
-                className="chatbot-inctruction"
-                name="chatbot-inctruction"
-                id="chatbot-inctruction"
+                className="create-bot-inctruction"
+                name="create-bot-inctruction"
+                id="create-bot-inctruction"
                 placeholder="Введите инструкции для бота"
                 value={inputData.text}
                 onChange={(e) =>
@@ -220,7 +217,7 @@ function CreateChatBot() {
             </div>
             <div className="create-bot-upload-wrapper">
               <h2>Готовые к загрузке файлы</h2>
-              <div className="succes-uploaded__area">
+              <div className="create-bot-succes-uploaded">
                 {fileUpload ? (
                   <p>Файлы есть!</p>
                 ) : (

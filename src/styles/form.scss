@@ -20,16 +20,20 @@
     text-align: center;
     position: relative;
     display: block;
-    margin: 20px auto;
+    margin: 0 auto 24px;
     font-family: 'Onest-Medium';
     font-size: 14px;
     color: rgb(33, 148, 54);
     transition: border 0.5s ease-out;
     border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
+    padding: 3px;
 
     &:hover {
         border-bottom: 1px solid rgb(33, 148, 54);
+    }
+
+    &--last {
+        margin: 0 auto;
     }
 }
 
@@ -42,22 +46,4 @@
 
 .form-button {
     margin-bottom: 24px;
-}
-
-.google-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 20px;
-    margin-bottom: 24px;
-    text-align: center;
-    font-size: 16px;
-    color: rgb(25, 31, 49);
-    border-radius: 8px;
-    border: 2px solid #e9ebf4;
-}
-
-.google-login>img {
-    object-fit: cover;
-    margin-right: 10px;
 }

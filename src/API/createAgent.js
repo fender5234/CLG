@@ -1,8 +1,8 @@
 async function createAgent(data) {
-  console.log(data, "метка");
-  console.log(JSON.stringify(data), 'метка');
+  const API_URL = "https://lexashvetsoff-onlineconsultantai-api-46d7.twc1.net/create_agent";
+
   try {
-    let result = await fetch('https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/agents/create_agent', {
+    let result = await fetch(API_URL, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

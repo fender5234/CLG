@@ -1,7 +1,6 @@
 // Функция для выхода
 async function logout() {
-  const API_URL =
-    "https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/auth/logout";
+  const API_URL = "https://lexashvetsoff-onlineconsultantai-api-46d7.twc1.net/auth/logout";
 
   try {
     let logout = await fetch(API_URL, {

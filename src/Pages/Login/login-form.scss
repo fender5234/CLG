@@ -2,3 +2,45 @@
   padding-top: 90px;
   flex-grow: 1;
 }
+
+.login-form-wrapper p {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #6C7280;
+  margin: 8px 0 24px;
+}
+
+.login-form-line {
+  display: block;
+  height: 1px;
+  background-color: #6C7280;
+  flex-grow: 1;
+}
+
+.login-form-line-center {
+  margin: 0 20px;
+}
+
+.google-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 20px;
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: 16px;
+  color: rgb(25, 31, 49);
+  border-radius: 8px;
+  border: 2px solid #e9ebf4;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: rgb(33, 148, 54);
+  }
+}
+
+.google-login>img {
+  object-fit: cover;
+  margin-right: 10px;
+}

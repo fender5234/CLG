@@ -1,7 +1,9 @@
 // Функция проверки авторизации
 async function authMe() {
+  const API_URL = "https://lexashvetsoff-onlineconsultantai-api-46d7.twc1.net/auth/me";
+
   try {
-    let register = await fetch('https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/auth/me', {
+    let register = await fetch(API_URL, {
       method: 'get',
       credentials: 'include',
     });
@@ -19,5 +21,5 @@ async function authMe() {
   }
 }
 
-export default authMe; 
+export default authMe;
 

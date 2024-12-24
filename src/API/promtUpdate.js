@@ -1,6 +1,7 @@
-
 function promtUpdate(userData) {
-  fetch(`https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/agents/update_promt_agent/${userData.id}`, {
+  const API_URL = "https://lexashvetsoff-onlineconsultantai-api-46d7.twc1.net/agents/update_promt_agent/";
+  
+  fetch(`API_URL${userData.id}`, {
       method: 'PATCH',
       credentials: 'include',
       headers: {

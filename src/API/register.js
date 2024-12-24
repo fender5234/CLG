@@ -1,5 +1,7 @@
 function register(userData) {
-    fetch('https://lexashvetsoff-onlineconsultantai-api-cfe7.twc1.net/auth/register', {
+    const API_URL = "https://lexashvetsoff-onlineconsultantai-api-46d7.twc1.net/auth/register";
+    
+    fetch(API_URL, {
         method: 'POST',
         credentials: 'include',
         headers: {

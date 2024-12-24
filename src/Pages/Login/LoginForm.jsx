@@ -96,17 +96,19 @@ function LoginForm() {
           <button type="submit" className="form-button">
             Войти
           </button>
-          <a href="#" className="google-login">
-            <img src="./src/assets/svg/google.svg" alt="Иконка гугл" /> Войти с
-            помощью Google
-          </a>
           <a href="www.google.com" className="form-link">
             {" "}
             <span className="black-color">Еще не зарегестрированы?</span>{" "}
             Зарегистрируйтесь!
           </a>
+          <p><span className="login-form-line"></span> <span className="login-form-line-center">Или войдите с помощью Google</span> <span className="login-form-line"></span></p>
+          <a href="#" className="google-login">
+            <img src="./src/assets/svg/google.svg" alt="Иконка гугл" /> Войти с
+            помощью Google
+          </a>
+
           <div className="nda-wrapper">
-            <a href="#" className="form-link">
+            <a href="#" className="form-link form-link--last">
               <span className="black-color">
                 Продолжая, вы соглашаетесь с нашими Условиями обслуживания{" "}
               </span>
