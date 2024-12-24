@@ -8,7 +8,8 @@ import DashBoardLayout from "../../components/DashBoardLayout/DashBoardLayout";
 import Pagination from "../../components/Pagination/Pagination";
 import MyDropzone from "../../components/DropZone";
 import NavBar from "../../components/NavBar/NavBar";
-
+import Tabs from "../../components/Tabs/Tabs";
+import UserProfile from "../../components/UserProfile/UserProfile";
 
 import uploadFile from "../../API/uploadFile";
 import authMe from "../../API/authMe";
@@ -75,7 +76,11 @@ function CreateChatBot() {
 
   return (
     <>
-      <DashBoardLayout nav={<NavBar />} header={<Pagination />}>
+      <DashBoardLayout
+        nav={<NavBar />}
+        header={<Pagination />}
+        userProfile={<UserProfile userName={'fender5234'}/>}
+      >
         <div className="wrapper wrapper-form">
           <form
             className="new-chat-bot-form"
@@ -85,7 +90,8 @@ function CreateChatBot() {
               uploadDataAgent();
             }}
           >
-            <h1 className="create-bot-title">Создание нового чат бота!</h1>
+            <h1 className="create-bot-title">Создание нового чат бота</h1>
+            <Tabs />
             <div className="create-bot-upload-wrapper">
               <div className="create-bot-profile">
                 <img src="src/assets/images/cat.jpg" alt="Образец фотографии" />
@@ -231,7 +237,9 @@ function CreateChatBot() {
                 )}
               </div>
             </div>
-            <button type="submit">Сохранить и продолжить</button>
+            <button type="submit" className="create-bot-wrapper__button">
+              Сохранить и продолжить
+            </button>
           </form>
         </div>
       </DashBoardLayout>
