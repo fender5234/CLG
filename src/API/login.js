@@ -14,14 +14,9 @@ async function login(userData) {
       },
       body: JSON.stringify(userData),
     });
-
-    if (login.ok) {
-      return true;
-    } else {
-      return false;
-    }
+    return login.status;
   } catch {
-    console.log("Какие то проблемы)))");
+    return false;
   }
 }
 

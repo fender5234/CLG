@@ -23,12 +23,17 @@ function LoginForm() {
   const [passShow, setPassShow] = useState("password");
   const [inputData, setInputData] = useState({});
   const [serviceOk, setServiceOk] = useState(true);
+  const [unauthorized, setUnauthorized] = useState("");
 
   async function handleLogin(inputData) {
     const isLogin = await login(inputData);
     userContext.setAuth(isLogin);
-    if (isLogin) {
+    console.log(isLogin);
+    if (isLogin === 200) {
       navigate("/create-bot");
+    } else if (isLogin === 401) {
+      setUnauthorized('input--error');
+     
     } else {
       setServiceOk(false);
     }
@@ -51,6 +56,7 @@ function LoginForm() {
               Ваш e-mail
             </label>
             <input
+              className={unauthorized}
               id="login"
               name="login"
               type="text"
@@ -58,6 +64,7 @@ function LoginForm() {
               value={inputData.name}
               onChange={(e) =>
                 handleInputChange(e, "email", setInputData, inputData)
+
               }
             />
           </div>
@@ -68,6 +75,7 @@ function LoginForm() {
             <div className="pass-wrapper">
               <input
                 name="password"
+                className={unauthorized}
                 type={passShow}
                 placeholder="Ваш пароль"
                 onChange={(e) =>
@@ -88,6 +96,7 @@ function LoginForm() {
                   }}
                 />
               </label>
+              {unauthorized ? <span className="unauthorized-status">Неверный логин или пароль. Попробуйте снова.</span> : ""}
             </div>
           </div>
           <a href="www.google.com" className="form-link">
@@ -97,8 +106,7 @@ function LoginForm() {
             Войти
           </button>
           <a href="www.google.com" className="form-link">
-            {" "}
-            <span className="black-color">Еще не зарегестрированы?</span>{" "}
+            <span className="black-color">Еще не зарегестрированы?</span>
             Зарегистрируйтесь!
           </a>
           <p><span className="login-form-line"></span> <span className="login-form-line-center">Или войдите с помощью Google</span> <span className="login-form-line"></span></p>

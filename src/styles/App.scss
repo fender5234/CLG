@@ -111,3 +111,12 @@ h3 {
     font-size: 16px;
     line-height: 24px;
 }
+
+.unauthorized-status {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    display: inline;
+    margin: 0;
+    color: #b3261e;
+}
