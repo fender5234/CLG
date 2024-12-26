@@ -1,0 +1,43 @@
+.wrapper-create-first-bot {
+  display: flex;
+  flex-grow: 1;
+}
+
+.create-first-bot {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-first-bot h1 {
+  font-family: 'Onest-Bold';
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  margin-bottom: 26px;
+  color: #191F31;
+}
+
+.create-first-bot p {
+  color: #6C7280;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 40px;
+}
+
+.create-first-bot a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  max-width: 200px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #1BC339;
+  text-align: center;
+  border-radius: 8px;
+}

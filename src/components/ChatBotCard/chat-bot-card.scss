@@ -1,0 +1,124 @@
+.chat-bot-card-item {
+  position: relative;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #E9EBF4;
+}
+
+.chat-bot-card-item>button {
+  z-index: 2;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 16px;
+  width: 8px;
+  background-color: transparent;
+
+  &:focus-within {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgb(33, 148, 54);
+    outline-offset: -2px;
+  }
+}
+
+.chat-bot-card-item>button>svg {
+  flex-shrink: 0;
+}
+
+.chat-bot-card-item h3 {
+  font-family: 'Onest-Medium';
+  font-weight: 500;
+  font-size: 20px;
+  color: #191F31;
+  line-height: 26px;
+  margin: 0 0 20px;
+}
+
+.chat-bot-card-item p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #6C7280;
+  margin: 0;
+}
+
+.chat-bot-card-item img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.chat-bot-card-functions-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 200px;
+  display: grid;
+  grid-template-rows: 0fr;
+  border: 0 solid #E9ECF2;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+
+  &--active {
+    grid-template-rows: 1fr;
+    border-width: 1px;
+    box-shadow: 0px 13px 21px -14px rgba(34, 60, 80, 0.15);
+  }
+}
+
+.chat-bot-card-item-functions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.chat-bot-card-item-functions>button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #191F31;
+  background-color: transparent;
+  padding: 16px;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.4s ease;
+
+
+  &:focus-within {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgb(33, 148, 54);
+    outline-offset: -2px;
+  }
+
+  &:hover,
+  &:active {
+    background-color: #EFF7F1;
+    color: #219436;
+  }
+
+  &:last-child {
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+.chat-bot-card-item-functions>button>svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}

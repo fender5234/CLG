@@ -1,0 +1,7 @@
+.wrapper-chatbots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  align-content: flex-start;
+  gap: 25px;
+}

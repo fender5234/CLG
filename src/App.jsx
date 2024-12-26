@@ -7,6 +7,8 @@ import Register from "./Pages/Register/Register";
 import Preloader from "./components/Preloader/Preloader";
 import RequireAuth from "./hoc/RequireAuth";
 import CreateChatBot from "./Pages/CreateChatBot/CreateChatBot";
+import ChatBots from './Pages/ChatBots/ChatBots';
+import CreateFirstBot from './components/CreateFirstBot/CreateFirstBot';
 
 import UserProvider from "./hoc/UserProvider";
 
@@ -21,15 +23,21 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
             <Route path="/preloader" element={<Preloader />} />
+            <Route path="/first-bot" element={<CreateFirstBot />} />
             <Route path="/create-bot" element={
               <RequireAuth>
-                <CreateChatBot />
+                <CreateChatBot />        
               </RequireAuth>
             } />
           </Route>
+          <Route path="/chat-bots" element={
+            <RequireAuth>
+              <ChatBots></ChatBots>
+            </RequireAuth>}>
+          </Route>
         </Routes>
       </BrowserRouter>
-    </UserProvider>
+    </UserProvider >
   );
 }
 
