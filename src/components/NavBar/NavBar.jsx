@@ -187,9 +187,11 @@ function NavBar() {
             </svg>
             Выход
           </button>
-          <a href="#" className="footer-link">
-            @2024 CloverChat
-          </a>
+          <div className="nav-bar-footer">
+            <a href="#" className="footer-link">
+              @2024 CloverChat
+            </a>
+          </div>
         </div>
       </div>
     </div>

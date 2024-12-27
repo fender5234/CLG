@@ -1,0 +1,19 @@
+.channels-wrapper {
+  justify-content: flex-start;
+}
+
+.channels-wrapper-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: flex-start;
+  gap: 25px;
+  margin: 0 0 32px;
+}
+
+.channels-wrapper-inner h2{
+  font-family: 'Onest-Medium';
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0 0 34px;
+}

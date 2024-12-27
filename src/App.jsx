@@ -9,7 +9,7 @@ import RequireAuth from "./hoc/RequireAuth";
 import CreateChatBot from "./Pages/CreateChatBot/CreateChatBot";
 import ChatBots from './Pages/ChatBots/ChatBots';
 import CreateFirstBot from './components/CreateFirstBot/CreateFirstBot';
-
+import Channels from './Pages/Chanels/Channels';
 import UserProvider from "./hoc/UserProvider";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -24,9 +24,10 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/preloader" element={<Preloader />} />
             <Route path="/first-bot" element={<CreateFirstBot />} />
+            <Route path="/channels" element={<Channels />}></Route>
             <Route path="/create-bot" element={
               <RequireAuth>
-                <CreateChatBot />        
+                <CreateChatBot />
               </RequireAuth>
             } />
           </Route>

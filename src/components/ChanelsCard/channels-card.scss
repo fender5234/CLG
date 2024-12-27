@@ -1,0 +1,56 @@
+.chanels-card-inner-wrapper {
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #E9EBF4;
+  border-radius: 12px;
+  max-width: 500px;
+}
+
+.chanels-card-inner-wrapper>img {
+  width: 80px;
+  height: 80px;
+  margin: 0 0 25px;
+}
+
+.chanels-card-inner-wrapper>h3 {
+  font-family: 'Onest-Medium';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: #191F31;
+  margin: 0 0 15px;
+}
+
+.chanels-card-inner-wrapper>p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6C7280;
+  margin: 0 0 20px;
+}
+
+.chanels-card-inner-wrapper>button {
+  display: flex;
+  padding: 10px 20px;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  max-width: 150px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #191F31;
+  border: 1px solid #E9EBF4;
+  transition: all 0.4s ease;
+
+  &:hover,
+  &:active {
+    background-color: rgba(33, 148, 54, 0.07);
+    color: rgb(33, 148, 54);
+  }
+}
+
+.chanels-card-inner-wrapper>button>svg {
+  flex-shrink: 0;
+}
