@@ -148,16 +148,21 @@
 .create-bot-succes-uploaded {
   margin-bottom: 50px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   padding: 18px;
   border: 2px solid rgb(223, 226, 235);
   border-radius: 12px;
 }
 
 .create-bot-succes-uploaded>p {
-  margin: 0;
+  display: flex;
+  gap: 20px;
+  margin: 0 0 20px;
   font-size: 16px;
-  color: rgb(108, 114, 128);
+  color: #191F31;
+  line-height: 22px;
+  font-family: 'Onest-Medium';
+  font-weight: 500;
 }
 
 .create-bot-succes-uploaded>img {

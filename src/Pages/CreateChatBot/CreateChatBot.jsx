@@ -16,6 +16,7 @@ import authMe from "../../API/authMe";
 import createAgent from "../../API/createAgent";
 
 import handleInputChange from "../../utils/handleInputChange";
+import FormatIconFile from "../../components/FormatIConFile/FormatIconFile";
 
 function CreateChatBot() {
   // Создаю новые экземпляр объекта formData который в который будем класть файл с текстом для отправки на сервер.
@@ -27,7 +28,7 @@ function CreateChatBot() {
   // Состояния (переменные) с нужными данными для отправки формы.
   const [inputData, setInputData] = useState({});
   const [userId, setUserId] = useState(null);
-  const [fileUpload, setFileUpload] = useState(null);
+  const [fileUpload, setFileUpload] = useState([]);
   const [filePath, setFilePath] = useState(null);
   //
 
@@ -42,11 +43,12 @@ function CreateChatBot() {
   if (fileUpload) {
     uploadData.append("file", fileUpload[0]);
   }
-  console.log(uploadData);
+  console.log("выбраные файл в аплоаде", fileUpload);
+  // console.log(uploadData);
   //
-  for (let value of uploadData.values()) {
-    console.log(value, "Проходимся по значениям");
-  }
+  // for (let value of uploadData.values()) {
+  //   console.log(value, "Проходимся по значениям");
+  // }
 
   // Функция для отправки текстового файла с промтом и получения пути к этому файлу обратно
   async function getPath() {
@@ -79,7 +81,7 @@ function CreateChatBot() {
       <DashBoardLayout
         nav={<NavBar />}
         header={<Pagination />}
-        userProfile={<UserProfile userName={'fender5234'}/>}
+        userProfile={<UserProfile userName={"fender5234"} />}
       >
         <div className="wrapper wrapper-form">
           <form
@@ -224,15 +226,18 @@ function CreateChatBot() {
             <div className="create-bot-upload-wrapper">
               <h2>Готовые к загрузке файлы</h2>
               <div className="create-bot-succes-uploaded">
-                {fileUpload ? (
-                  <p>Файлы есть!</p>
+                {fileUpload.length ? (
+                  <>
+                    {fileUpload.map((file) => (
+                      <p key={file.name}>
+                        {<FormatIconFile filetype={file.type} />}
+                        {file.name}
+                      </p>
+                    ))}
+                  </>
                 ) : (
                   <>
-                    <p>Файлы отсутствуют</p>{" "}
-                    <img
-                      src="src/assets/images/not-files.svg"
-                      alt="Иконка пустой файл"
-                    />
+                    <p>Файлы отсутствуют</p>
                   </>
                 )}
               </div>

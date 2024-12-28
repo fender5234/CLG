@@ -1,0 +1,23 @@
+<svg width="39.014435" height="49.333374" viewBox="0 0 39.0144 49.3334" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_2014_527_dd" x="0.000000" y="0.000000" width="39.014435" height="49.333374" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+			<feOffset dx="0" dy="4"/>
+			<feGaussianBlur stdDeviation="1.33333"/>
+			<feComposite in2="hardAlpha" operator="out" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect_dropShadow_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_dropShadow_1" result="shape"/>
+		</filter>
+	</defs>
+	<g filter="url(#filter_2014_527_dd)">
+		<path id="Vector" d="M25.98 0L5.05 0C4.47 0 4 0.48 4 1.42L4 40.59C4 40.84 4.47 41.33 5.05 41.33L33.95 41.33C34.54 41.33 35.01 40.84 35.01 40.59L35.01 9.57C35.01 9.06 34.94 8.89 34.82 8.77L26.43 0.18C26.31 0.06 26.15 0 25.98 0Z" fill="#D8DFE3" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M33.95 41.33L5.05 41.33C4.47 41.33 4 40.84 4 40.25L4 28.78L35.01 28.78L35.01 40.25C35.01 40.84 34.54 41.33 33.95 41.33Z" fill="#AFBDC7" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id=".txt" d="M21.09 37.82Q21.49 38 22.14 38L22.7 38L22.7 37.05L22.28 37.05Q21.72 37.05 21.55 36.82Q21.37 36.57 21.37 36.08L21.37 33.5L22.74 33.5L22.74 32.55L21.37 32.55L21.37 30.98L20.31 30.98L20.31 32.55L19.45 32.55L19.45 33.5L20.31 33.5L20.31 36.22Q20.31 36.85 20.49 37.24Q20.59 37.43 20.73 37.57L20.73 37.57Q20.88 37.72 21.09 37.82ZM30.39 37.82Q30.79 38 31.43 38L32 38L32 37.05L31.57 37.05C31.2 37.05 30.96 36.98 30.84 36.82Q30.66 36.57 30.66 36.08L30.66 33.5L32.04 33.5L32.04 32.55L30.66 32.55L30.66 30.98L29.6 30.98L29.6 32.55L28.74 32.55L28.74 33.5L29.6 33.5L29.6 36.22Q29.6 36.85 29.79 37.24C29.92 37.5 30.12 37.7 30.39 37.82ZM23.12 38L25.05 35.22L23.21 32.55L24.48 32.55L25.76 34.5L27 32.55L28.23 32.55L26.4 35.25L28.37 38L27.11 38L25.7 36.01L24.32 38L23.12 38ZM17.48 38.02Q17.64 38.1 17.84 38.1Q18.03 38.1 18.18 38.02Q18.26 37.97 18.34 37.9Q18.4 37.84 18.45 37.77Q18.54 37.6 18.54 37.39C18.54 37.17 18.47 37 18.34 36.87Q18.25 36.78 18.15 36.73Q18.01 36.66 17.84 36.66Q17.68 36.66 17.54 36.72L17.54 36.72Q17.43 36.77 17.33 36.87C17.2 37 17.13 37.17 17.13 37.39Q17.13 37.62 17.23 37.79Q17.27 37.85 17.32 37.9Q17.4 37.97 17.48 38.02Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+		<path id="Vector" d="M26.35 0.11L26.35 8.85L34.9 8.85L26.35 0.11Z" fill="#AFBDC7" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>
