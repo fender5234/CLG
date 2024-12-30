@@ -26,7 +26,7 @@ function CreateChatBot() {
   // Создаем объект с нужными полями в которых будут данные об агенте
 
   // Состояния (переменные) с нужными данными для отправки формы.
-  const [inputData, setInputData] = useState({});
+  const [inputData, setInputData] = useState({name:""});
   const [userId, setUserId] = useState(null);
   const [fileUpload, setFileUpload] = useState([]);
   const [filePath, setFilePath] = useState(null);
@@ -41,14 +41,15 @@ function CreateChatBot() {
   //
   // Добавляем выбранный файл с настройками в FormData и отправляем его на сервер
   if (fileUpload) {
-    uploadData.append("file", fileUpload[0]);
+    fileUpload.forEach((file) => uploadData.append("file", file));
+    // uploadData.append("file", fileUpload[0]);
   }
-  console.log("выбраные файл в аплоаде", fileUpload);
-  // console.log(uploadData);
-  //
-  // for (let value of uploadData.values()) {
-  //   console.log(value, "Проходимся по значениям");
-  // }
+
+  for (let value of uploadData.values()) {
+    console.log(value, "Проходимся по значениям");
+  }
+
+  console.log(uploadData.getAll('file'))
 
   // Функция для отправки текстового файла с промтом и получения пути к этому файлу обратно
   async function getPath() {
@@ -74,6 +75,12 @@ function CreateChatBot() {
   async function uploadDataAgent() {
     await getPath();
     createAgent(newAgent);
+  }
+
+  function deleteFileHandler(file) {
+    setFileUpload(
+      fileUpload.filter((files) => files.name !== file.textContent)
+    );
   }
 
   return (
@@ -181,6 +188,7 @@ function CreateChatBot() {
                   </span>
                   <input
                     type="text"
+                    name="name"
                     placeholder="Придумайте название для агента"
                     value={inputData.name}
                     onChange={(e) =>
@@ -229,15 +237,27 @@ function CreateChatBot() {
                 {fileUpload.length ? (
                   <>
                     {fileUpload.map((file) => (
-                      <p key={file.name}>
+                      <p
+                        className="create-bot-succes-uploaded-file"
+                        key={file.name}
+                      >
                         {<FormatIconFile filetype={file.type} />}
                         {file.name}
+                        <button
+                          onClick={(evt) => {
+                            deleteFileHandler(evt.target.closest("p"));
+                          }}
+                          className="create-bot-succes-uploaded-file-delete"
+                          type="button"
+                        ></button>
                       </p>
                     ))}
                   </>
                 ) : (
                   <>
-                    <p>Файлы отсутствуют</p>
+                    <p className="create-bot-succes-uploaded-file--not-files">
+                      Выберите файлы для отображения
+                    </p>
                   </>
                 )}
               </div>
