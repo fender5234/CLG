@@ -3,7 +3,7 @@ import { useDropzone } from "react-dropzone";
 
 function MyDropzone({ setFileUpload, fileUpload }) {
   const onDrop = useCallback((acceptedFiles) => {}, []);
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps } = useDropzone();
 
   function selectedFiles(evt) {
     setFileUpload([...fileUpload, ...evt.target.files]);

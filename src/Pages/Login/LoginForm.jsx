@@ -30,7 +30,7 @@ function LoginForm() {
     userContext.setAuth(isLogin);
     console.log(isLogin);
     if (isLogin === 200) {
-      navigate("/create-bot");
+      navigate("/");
     } else if (isLogin === 401) {
       setUnauthorized('input--error');
      
