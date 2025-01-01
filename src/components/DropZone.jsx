@@ -2,11 +2,21 @@ import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
 function MyDropzone({ setFileUpload, fileUpload }) {
-  const onDrop = useCallback((acceptedFiles) => {}, []);
-  const { getRootProps, getInputProps } = useDropzone();
+  console.log("Аплоад в начале", fileUpload);
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      selectedFiles(acceptedFiles);
+    },
+    [fileUpload]
+  );
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+  });
 
-  function selectedFiles(evt) {
-    setFileUpload([...fileUpload, ...evt.target.files]);
+  function selectedFiles(file) {
+    console.log("Аплоад в данный момент", fileUpload);
+
+    setFileUpload([...fileUpload, ...file]);
   }
   return (
     <div {...getRootProps()}>
@@ -24,17 +34,8 @@ function MyDropzone({ setFileUpload, fileUpload }) {
           Если вы загружаете PDF-файл, убедитесь, что вы можете выделить в нем
           текст.
         </span>
+        <input {...getInputProps()} name="userFile" multiple />
       </label>
-
-      <input
-        {...getInputProps()}
-        onChange={(evt) => {
-          evt.preventDefault();
-          selectedFiles(evt);
-        }}
-        name="userFile"
-        multiple
-      />
     </div>
   );
 }
