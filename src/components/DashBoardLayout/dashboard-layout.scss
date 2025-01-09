@@ -1,3 +1,5 @@
+@import '../../styles/media.scss';
+
 .dashboard-layout {
   display: grid;
   height: 100%;
@@ -5,19 +7,23 @@
   grid-template-rows: 86px 1fr;
   background-color: #fff;
   min-height: 100vh;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
 }
 
-.navbar-area {
-  grid-column: 1/2;
-  grid-row: 1/-1;
-  border-right: 1px solid rgb(233, 235, 244);
-}
+
 
 .header-area {
   grid-column: 2/3;
   grid-row: 1/2;
 
   background-color: #ffffff;
+
+  @include mobile {
+    grid-column: 1/-1;
+  }
 }
 
 .page-area {
@@ -25,4 +31,8 @@
   grid-row: 2/-1;
   padding: 24px 24px 0;
   background-color: #f5f6fb;
+
+  @include mobile {
+    grid-column: 1/-1;
+  }
 }

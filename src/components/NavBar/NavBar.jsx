@@ -4,7 +4,14 @@ import { useNavigate } from "react-router-dom";
 import "./nav-bar.scss";
 import logout from "../../API/logout";
 
-function NavBar() {
+import LogoLink from "../LogoLink/LogoLink";
+
+import useDeviceDetect from "../../customHooks/useDeviceDetect";
+
+
+
+function NavBar({openMenu}) {
+  const isMobile = useDeviceDetect();
   const navigate = useNavigate();
 
   async function handleLogout() {
@@ -13,13 +20,20 @@ function NavBar() {
   }
 
   return (
-    <div className="nav-bar">
+    <div
+    //  className={openMenu ? 'nav-bar nav-bar--active' : 'nav-bar'}
+     className='nav-bar'
+     >
       <div className="nav-bar__wrapper">
-        <div className="nav-bar__logo">
-          <a className="logo-link" href="#">
-            <img src="./src/assets/svg/logo.svg" alt="" />
-          </a>
-        </div>
+        {
+          isMobile ?
+            ''
+            :
+            <div className="nav-bar__logo">
+              <LogoLink />
+            </div>
+        }
+
         <ul className="nav-bar__list">
           <li>
             <Link to={"/chat-bots"}>

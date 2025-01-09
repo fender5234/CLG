@@ -1,0 +1,14 @@
+@import '../../styles/media.scss';
+
+.logo-link {
+  display: block;
+}
+
+.logo-link>img {
+  display: block;
+
+  @include mobile {
+    width: 197px;
+    height: 41px;
+  }
+}

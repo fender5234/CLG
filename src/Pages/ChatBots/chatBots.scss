@@ -1,7 +1,13 @@
+@import '../../styles/media.scss';
+
 .wrapper-chatbots {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   height: 100%;
   align-content: flex-start;
   gap: 25px;
+
+  @include mobile {
+		grid-template-columns: 1fr;
+	}
 }

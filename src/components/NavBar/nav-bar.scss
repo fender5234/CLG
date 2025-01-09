@@ -1,3 +1,37 @@
+@import '../../styles/media.scss';
+
+.navbar-area {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  border-right: 1px solid rgb(233, 235, 244);
+
+  @include mobile {
+    grid-column: unset;
+    grid-row: unset;
+    z-index: 999;
+    position: fixed;
+    top: 85px;
+    left: 0;
+    width: 0;
+    background-color: transparent;
+    transition-property: width,background-color;
+    transition-duration: 0.5s, 2s;
+   
+
+
+
+
+    &--active {
+      width: 100%;
+      transition-duration: 0.5s, 2s;
+      background-color: rgba(102, 102, 102, 0.5);
+
+    }
+  }
+}
+
+
+
 .nav-bar {
   position: relative;
   display: flex;
@@ -5,8 +39,19 @@
   padding: 0 20px;
   grid-column: 1/2;
   background-color: #ffffff;
-  max-width: 280px;
   align-items: center;
+  transition-property: transform;
+  transition-duration: 0.4s;
+
+  @include mobile {
+    transform: translate(-100%);
+    overflow: hidden;
+  }
+
+  &--active {
+    max-width: 85%;
+    transform: translate(0%);
+  }
 }
 
 .nav-bar__wrapper {
@@ -16,6 +61,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+
+  @include mobile {
+    position: static;
+  }
 }
 
 .nav-bar__list {
@@ -63,6 +112,10 @@
 .nav-bar__logo {
   padding-bottom: 16px;
   border-bottom: 1px solid rgb(233, 235, 244);
+
+  @include mobile {
+    border: none;
+  }
 }
 
 .nav-bar__footer {
