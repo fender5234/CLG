@@ -34,5 +34,6 @@
 
   @include mobile {
     grid-column: 1/-1;
+    padding: 15px;
   }
 }

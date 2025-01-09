@@ -6,6 +6,7 @@
   gap: 22px;
 
   @include mobile {
+    justify-content: space-between;
     gap: 8px;
   }
 }

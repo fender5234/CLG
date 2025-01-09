@@ -8,9 +8,7 @@ import LogoLink from "../LogoLink/LogoLink";
 
 import useDeviceDetect from "../../customHooks/useDeviceDetect";
 
-
-
-function NavBar({openMenu}) {
+function NavBar({ openMenu }) {
   const isMobile = useDeviceDetect();
   const navigate = useNavigate();
 
@@ -20,19 +18,15 @@ function NavBar({openMenu}) {
   }
 
   return (
-    <div
-    //  className={openMenu ? 'nav-bar nav-bar--active' : 'nav-bar'}
-     className='nav-bar'
-     >
+    <div className={openMenu ? "nav-bar nav-bar--active" : "nav-bar"}>
       <div className="nav-bar__wrapper">
-        {
-          isMobile ?
-            ''
-            :
-            <div className="nav-bar__logo">
-              <LogoLink />
-            </div>
-        }
+        {isMobile ? (
+          ""
+        ) : (
+          <div className="nav-bar__logo">
+            <LogoLink />
+          </div>
+        )}
 
         <ul className="nav-bar__list">
           <li>

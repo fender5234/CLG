@@ -28,5 +28,7 @@
 
     @include mobile {
         width: 100%;
+        box-shadow: none;
+        padding: 20px 15px 20px;
       }
   }
