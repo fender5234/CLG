@@ -2,21 +2,17 @@ import './chat-bot-card.scss';
 import { useState } from 'react';
 
 function ChatBotCard() {
-  const [show, setShow] = useState(false);
-
-  function showOptions(show, setShow) {
-    setShow(!show);
-  };
-
+  const [showOptions, setShowOptions] = useState(false);
+  
   return (
     <div className="chat-bot-card-item" onClick={() => {
-      showOptions(show, setShow)
+      setShowOptions(() => !showOptions);
     }}>
       <img src="src/assets/images/image-bot.jpeg" alt="Аватар чатбота" />
       <h3>Lunaskin</h3>
       <p>Created: 12.08.2021</p>
       <button type="button" onClick={() => {
-        showOptions(show, setShow)
+        setShowOptions(() => !showOptions);
       }}>
         <svg width="8.000000" height="16.000000" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <desc>
@@ -32,7 +28,7 @@ function ChatBotCard() {
           </g>
         </svg>
       </button>
-      <div className={show ? "chat-bot-card-functions-wrapper chat-bot-card-functions-wrapper--active" : "chat-bot-card-functions-wrapper"}>
+      <div className={showOptions ? "chat-bot-card-functions-wrapper chat-bot-card-functions-wrapper--active" : "chat-bot-card-functions-wrapper"}>
         <div className="chat-bot-card-item-functions">
           <button type="button">
             <svg width="16.960266" height="16.960266" viewBox="0 0 16.9603 16.9603" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

@@ -2,7 +2,7 @@ import "./user-profile.scss";
 
 import useDeviceDetect from "../../customHooks/useDeviceDetect";
 
-function UserProfile({ userName, setOpenMenu }) {
+function UserProfile({ userName, setOpenMenu, openMenu }) {
   const isMobile = useDeviceDetect();
   return (
     <>
@@ -15,6 +15,11 @@ function UserProfile({ userName, setOpenMenu }) {
             </button>
             <button onClick={() => {
               setOpenMenu((menu) => !menu);
+              if (openMenu) {
+                document.body.style.overflowY = 'unset';
+              } else {
+                document.body.style.overflowY = 'hidden';
+              }
             }} type="button" className="user-profile__button">
               <svg width="22.000000" height="22.000000" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                 <desc>

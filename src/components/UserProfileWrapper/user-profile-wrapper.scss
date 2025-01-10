@@ -1,0 +1,36 @@
+.user-profile-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.user-profile-wrapper>button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 20px;
+  outline: none;
+  
+}
+
+.user-profile-wrapper>h4 {
+  font-family: "Onest-Medium";
+  font-weight: 500;
+  line-height: 20px;
+  font-size: 16px;
+  margin: 0;
+ 
+}
+
+.user-profile-wrapper>img {
+  display: block;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -15,9 +15,16 @@ function DashBoardLayout() {
   const [openMenu, setOpenMenu] = useState(false);
   const isMobile = useDeviceDetect();
 
+
+
+
   return (
     <div className="dashboard-layout">
-      <div className={openMenu ? 'navbar-area navbar-area--active' : 'navbar-area'}>
+      <div className={openMenu ? 'navbar-area navbar-area--active' : 'navbar-area'}
+        onClick={() => {
+          setOpenMenu(false);
+          document.body.style.overflowY = 'unset';
+        }}>
         <NavBar openMenu={openMenu} />
       </div>
       <div className="header-area">
@@ -25,7 +32,7 @@ function DashBoardLayout() {
           {
             isMobile ? <>
               <LogoLink />
-              <UserProfile setOpenMenu={setOpenMenu} />
+              <UserProfile setOpenMenu={setOpenMenu} openMenu={openMenu} />
             </>
               :
               <>
