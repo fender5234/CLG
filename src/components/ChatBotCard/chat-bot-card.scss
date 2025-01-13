@@ -1,8 +1,15 @@
+@import '../../styles/media.scss';
+
 .chat-bot-card-item {
   position: relative;
   padding: 30px;
   border-radius: 12px;
   border: 1px solid #E9EBF4;
+
+  
+  @include mobile {
+   padding: 20px;
+  }
 }
 
 .chat-bot-card-item>button {
@@ -74,6 +81,11 @@
     border-width: 1px;
     box-shadow: 0px 13px 21px -14px rgba(34, 60, 80, 0.15);
   }
+
+  @include mobile {
+    max-width: none;
+    position: static;
+  }
 }
 
 .chat-bot-card-item-functions {
@@ -82,6 +94,12 @@
   justify-content: center;
   width: 100%;
   overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 12px;
+
+  @include mobile {
+    flex-direction: row;
+  }
 }
 
 .chat-bot-card-item-functions>button {
@@ -95,6 +113,13 @@
   padding: 16px;
   border-radius: 8px 8px 0 0;
   transition: all 0.4s ease;
+
+  @include mobile {
+    padding: 5px 10px;
+    background-color: #fcfcfe;
+    border: 1px solid #DFE2EB;
+    border-radius: 8px;
+  }
 
 
   &:focus-within {
@@ -114,6 +139,10 @@
 
   &:last-child {
     border-radius: 0 0 8px 8px;
+
+    @include mobile {
+     border-radius: 8px;
+    }
   }
 }
 

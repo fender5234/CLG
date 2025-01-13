@@ -8,14 +8,18 @@
   @include mobile {
     grid-column: unset;
     grid-row: unset;
-    z-index: 999;
+    z-index: -1;
     position: fixed;
     top: 88px;
     left: 0;
-    width: 0;
     border: none;
     width: 100%;
     overflow-y: hidden;
+    transition: all 0.6s linear;
+
+    &--active {
+      z-index: 999;
+    }
   }
 }
 
@@ -108,7 +112,7 @@
   }
 
   @include mobile {
-    max-width: 280px;
+    max-width: none;
     width: 100%;
     justify-content: flex-start;
     margin: 0;

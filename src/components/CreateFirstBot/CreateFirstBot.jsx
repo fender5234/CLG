@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import './create-first-bot.scss';
 
+import logo from '../../assets/svg/big-logo.svg';
+
 function CreateFirstBot() {
   return (
     <div className="wrapper wrapper-create-first-bot">
       <div className="create-first-bot">
-        <img src="src/assets/svg/big-logo.svg" alt="Логотип CloverChat" />
+        <img src={logo} alt="Логотип CloverChat" />
         <h1>Создайте своего первого чат бота</h1>
         <p>Онлайн-консультант на базе искусственного интеллекта за 5 минут</p>
         <Link to="/create-bot">

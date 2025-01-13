@@ -41,6 +41,10 @@
   display: flex;
   gap: 15px;
   align-items: center;
+
+  @include mobile {
+    margin-bottom: 24px;
+  }
 }
 
 .user-profile-wrapper>button {

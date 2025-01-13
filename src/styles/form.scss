@@ -1,3 +1,5 @@
+@import '../styles/media.scss';
+
 .form {
     display: flex;
     flex-direction: column;
@@ -7,6 +9,11 @@
     padding: 42px;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
+
+    @include mobile {
+        margin: 0;
+        padding: 24px;
+    }
 }
 
 .form-wrapper {
@@ -14,6 +21,10 @@
     align-items: center;
     padding-top: 90px;
     flex-grow: 1;
+
+    @include mobile {
+        padding: 15px;
+    }
 }
 
 .form-link {
@@ -42,6 +53,11 @@
     text-align: center;
     font-size: 32px;
     font-weight: 500;
+
+    @include mobile {
+        margin: 0 0 32px;
+        font-size: 22px;
+    }
 }
 
 .form-button {

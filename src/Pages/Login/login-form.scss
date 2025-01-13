@@ -1,6 +1,26 @@
+@import '../../styles/media.scss';
+
 .login-form-wrapper {
   padding-top: 90px;
   flex-grow: 1;
+
+  @include mobile {
+    padding: 15px;
+  }
+}
+
+.login-form-wrapper > form {
+  @include mobile {
+    margin: 0;
+    padding: 24px;
+  }
+}
+
+.login-form-wrapper .form-title {
+  @include mobile {
+    margin: 0 0 32px;
+    font-size: 22px;
+  }
 }
 
 .login-form-wrapper p {

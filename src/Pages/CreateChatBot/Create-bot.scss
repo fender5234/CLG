@@ -1,5 +1,12 @@
+@import "../../styles/media.scss";
+
 .create-bot-title {
   margin: 0 0 40px;
+
+  @include mobile {
+    margin-bottom: 35px;
+    text-align: center;
+  }
 }
 
 .create-bot-subtitle {
