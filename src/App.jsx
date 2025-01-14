@@ -22,18 +22,16 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<Register />} />
 
-          <Route
-            path="/"
-            element={
+          <Route path="/" element={
               <RequireAuth>
                 <DashBoardLayout />
               </RequireAuth>
             }
           >
             <Route index element={<ChatBots></ChatBots>}></Route>
-            <Route path="/first-bot" element={<CreateFirstBot />} />
-            <Route path="/channels" element={<Channels />}></Route>
-            <Route path="/create-bot" element={<CreateChatBot />} />
+            <Route path="first-bot" element={<CreateFirstBot />} />
+            <Route path="channels" element={<Channels />}></Route>
+            <Route path="create-bot" element={<CreateChatBot />} />
           </Route>
         </Routes>
       </BrowserRouter>
