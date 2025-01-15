@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import googleIcon from '../../assets/svg/google.svg';
+
 import "../../styles/input.scss";
 import "../../styles/form.scss";
 import "./login-form.scss";
@@ -111,7 +113,7 @@ function LoginForm() {
           </a>
           <p><span className="login-form-line"></span> <span className="login-form-line-center">Или войдите с помощью Google</span> <span className="login-form-line"></span></p>
           <a href="#" className="google-login">
-            <img src="./src/assets/svg/google.svg" alt="Иконка гугл" /> Войти с
+            <img src={googleIcon} alt="Иконка гугл" /> Войти с
             помощью Google
           </a>
 
