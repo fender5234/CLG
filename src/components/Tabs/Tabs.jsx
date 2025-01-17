@@ -4,7 +4,7 @@ function Tabs() {
   return (
     <div className="tabs">
       <Link className="active">Настройка</Link>
-      <Link>Тестирование</Link>
+      <Link>Тест</Link>
       <Link>Каналы</Link>
     </div>
   );

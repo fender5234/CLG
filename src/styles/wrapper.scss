@@ -19,4 +19,8 @@
 
 .wrapper-form {
   flex-direction: column;
+  
+  @include mobile {
+    padding: 30px 15px;
+   }
 }

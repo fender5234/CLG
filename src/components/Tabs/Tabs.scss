@@ -1,3 +1,5 @@
+@import "../../styles/media.scss";
+
 .tabs {
   position: relative;
   display: flex;
@@ -13,6 +15,12 @@
     height: 2px;
     background-color: #E9EBF4;
   }
+
+  @include mobile {
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
 }
 
 .tabs a {
@@ -26,11 +34,15 @@
   transition: all 0.4s ease;
 
   &:first-child {
-    padding: 10px 0;
+    padding:  0 0 20px;
   }
 
   &:hover,&:active {
     color: rgb(33, 148, 54);
+  }
+
+  @include mobile {
+    padding:  0 0 20px;
   }
 }
 

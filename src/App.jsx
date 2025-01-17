@@ -23,10 +23,11 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/" element={
-              <RequireAuth>
-                <DashBoardLayout />
-              </RequireAuth>
-            }
+            // <RequireAuth>
+            //   <DashBoardLayout />
+            // </RequireAuth>
+              <DashBoardLayout />
+          }
           >
             <Route index element={<ChatBots></ChatBots>}></Route>
             <Route path="first-bot" element={<CreateFirstBot />} />
